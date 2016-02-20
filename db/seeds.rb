@@ -21,3 +21,7 @@ end
 20.times do
   Question.create!(description: Faker::Lorem.sentence + '?', test_id: rand(1..5))
 end
+
+40.times do
+  Answer.create!(description: Faker::Lorem.sentence + '?', question_id: rand(1..20))
+end

@@ -1,6 +1,7 @@
 class QuestionsController < InheritedResources::Base
   def index
     @questions = Question.all
+    @answer = Answer.all
   end
 
   def new
@@ -19,7 +20,6 @@ class QuestionsController < InheritedResources::Base
 
   def show
     @question = Question.find(params[:id])
-
 
   end
 

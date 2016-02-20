@@ -2,6 +2,7 @@ class TestsController < ApplicationController
   def index
     @tests = Test.all
     @questions = Question.all
+    @answers = Answer.all
   end
 
   def edit
@@ -10,8 +11,13 @@ class TestsController < ApplicationController
 
   def show
     @test = Test.find(params[:id])
+    @tests = Test.all
+    @questions = Question.all
+  end
 
-    @questions = @test.questions
+  def create_question_with_test
+    @question = Question.new
+    @test = Test.find(params[:id])
   end
 
   def new
