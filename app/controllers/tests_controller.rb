@@ -43,6 +43,12 @@ class TestsController < ApplicationController
     @test = Test.find(params[:id])
   end
 
+  def start_test
+    @test = Test.find(params[:id])
+    @questions = Question.all
+    @answers = Answer.all
+  end
+
   private
   def test_params
     params.require(:test).permit(:name, :description)

@@ -1,0 +1,22 @@
+<h1> <%= @test.name%></h1>
+<h4><%= @test.description %> </h4>
+
+<% form_for(@test) do |f| %>
+<h2>Student information</h2>
+
+<%= f.label 'First name' %>
+<%= f.text_field :first_name %>
+
+    <%= f.label 'Last name' %>
+<%= f.text_field :last_name %>
+
+    <%= f.label 'Group ' %>
+<%= f.text_field :group %>
+
+    <% counter = 0 %>
+<h1>Questions</h1>
+<% @questions.each do |question| %>
+  <%= question.description%>
+        <optgroup label=""
+<% end %>
+
